@@ -386,7 +386,7 @@ public class DiscordBot extends ListenerAdapter {
 		}
 		if (args[0].toLowerCase().equalsIgnoreCase("==save")) {
 			List<Member> mentionList = message.getMentionedMembers();
-			String userId = mentionList.isEmpty() ? user.getName() + "_" + user.getId() : mentionList.get(0).getUser().getName() + "_" + mentionList.get(0).getUser().getId();
+			String userId = mentionList.isEmpty() ? user.getId() : mentionList.get(0).getUser().getId();
 			List<AudioTrack> queue = PlayerManager.getInstance().getGuildMusicManager(guild).scheduler.getQueueCopy();
 			File folder = new File("playlist");
 			folder.mkdirs();
@@ -403,7 +403,7 @@ public class DiscordBot extends ListenerAdapter {
 		}
 		if (args[0].toLowerCase().equalsIgnoreCase("==saveappend")) {
 			List<Member> mentionList = message.getMentionedMembers();
-			String userId = mentionList.isEmpty() ? user.getName() + "_" + user.getId() : mentionList.get(0).getUser().getName() + "_" + mentionList.get(0).getUser().getId();
+			String userId = mentionList.isEmpty() ? user.getId() : mentionList.get(0).getUser().getId();
 			List<AudioTrack> queue = PlayerManager.getInstance().getGuildMusicManager(guild).scheduler.getQueueCopy();
 			File folder = new File("playlist");
 			folder.mkdirs();
@@ -420,7 +420,7 @@ public class DiscordBot extends ListenerAdapter {
 		}
 		if (args[0].toLowerCase().equalsIgnoreCase("==load")) {
 			List<Member> mentionList = message.getMentionedMembers();
-			String userId = mentionList.isEmpty() ? user.getName() + "_" + user.getId() : mentionList.get(0).getUser().getName() + "_" + mentionList.get(0).getUser().getId();
+			String userId = mentionList.isEmpty() ? user.getId() : mentionList.get(0).getUser().getId();
 			File folder = new File("playlist");
 			folder.mkdirs();
 			File file = new File(folder, userId + ".txt");
